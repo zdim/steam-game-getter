@@ -1,0 +1,17 @@
+Tasks:
+    ✔ add !wsip, command for 1 person @done (2/22/2019, 5:24:19 PM)
+    ✔ fix callback to only pass in the channel.send() instead of the whole channel @done (2/22/2019, 2:21:16 PM)
+    ☐ test errors
+    ☐ clean up the steam game requests so the first one doesn't include the full appinfo?
+    ☐ add a link to launch from steam?
+        - apparently we can't. it's an issue with the discord api- https://github.com/discordapp/discord-api-docs/issues/715
+    ☐ break out logic to separate file
+    ☐ add icon (embed?)
+    ✔ add vanity url logic @done (2/25/2019, 12:57:05 PM)
+    ☐ add some variety to the "You should play..." message
+        - "How about some..."
+        - "Give ... a shot"
+        - "What about... ?"
+    ☐ deploy it (heroku ?)
+Long Term:
+    ☐ add other sources of games (origin, discord, humble)
