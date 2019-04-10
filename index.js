@@ -9,7 +9,7 @@ const bot = new discord.Client();
 bot.on('message', message => {
     if(message.author == bot.user || !message.content.startsWith("!")) return;
 
-    const splitCommand = message.content.split(" ");
+    const splitCommand = message.content.split(" ").filter(Boolean);
     const args = splitCommand.slice(1);
     const sendMessage = msg => message.channel.send(msg);
 
@@ -26,6 +26,7 @@ bot.on('message', message => {
 bot.login(process.env.BOT_KEY);
 
 function whatShouldWePlay(steamIds, respond) {
+    console.log(steamIds);
     if(steamIds.length < 2 || steamIds.length > 4) {
         respond('Sorry! **!wswp** only works with 2 to 4 IDs.');
         return;

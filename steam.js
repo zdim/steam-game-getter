@@ -18,10 +18,16 @@ function getIdFromCustomUrl(_customUrl, _callback, _respond) {
             res.setEncoding('utf8');
             res.on('data', data => {
                 chunks.push(data);
+            }).on('error', err => {
+                console.error(err.message);
             }).on('end', () => {
-                const data = JSON.parse(chunks.join(''));
-                const id = data.response.steamid;
-                _callback(id);
+                const data = JSON.parse(chunks.join(''));                
+                if(data.response) {
+                    const id = data.response.steamid;
+                    _callback(id);
+                } else {
+                    console.log('Error retrieving Custom URL: ' + _customUrl)
+                }
             });
         }
     );
