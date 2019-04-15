@@ -1,0 +1,19 @@
+{
+  "name": "steam-game-getter",
+  "version": "1.0.0",
+  "description": "Steam API game retrieval",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "npm start",
+    "dev": "nodemon start"
+  },
+  "author": "zdim",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0"
+  }
+}
