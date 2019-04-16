@@ -7,8 +7,11 @@ exports.whatShouldIPlay = async function(steamId) {
         throw "Sorry! **!wsip** only works with 1 ID.";
       }
     
-      const steamGames = await steam.getGames(steamId);
+      let steamGames = await steam.getGames(steamId);
       steamGames = steamGames.shift();
+      if(!steamGames) {
+        throw "No games found!";
+      }
       const theGame = steamGames[utils.getRandomNumber(0, steamGames.length - 1)];
       return theGame.name;
 }

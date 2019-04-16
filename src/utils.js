@@ -23,7 +23,7 @@ exports.filterGames = function (gamesLists) {
 
   // remove empty lists
   gamesLists = gamesLists.filter(list => list && list.length > 0);
-
+  console.log(gamesLists);
   if (gamesLists.length == 0) {
     throw "You have no multiplayer games in common!";
   }

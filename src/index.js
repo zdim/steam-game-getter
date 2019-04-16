@@ -22,7 +22,15 @@ bot.on("message", message => {
     case "!wsip":
     commands.whatShouldIPlay(args)
       .then(game => sendMessage(youShouldPlay(game)))
-      .catch(err => err ? sendMessage(err) : sendMessage("Oops! Something went wrong, try again!"));
+      .catch(err => { 
+        if(typeof(err) === "string") {
+          sendMessage(err);
+        } else {
+          console.error('error: ' + err);
+          console.error(' at: ' + err.stack);
+          sendMessage("Oops! Something went wrong, try again!");
+        }
+      });
       break;
   }
 });
